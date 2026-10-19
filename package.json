@@ -1,0 +1,12 @@
+{
+  "name": "runario",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runario: archivo de coleccionistas de Riftbound (proyecto de fans, no oficial).",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/run.mjs",
+    "prices": "node tools/build-prices.mjs"
+  }
+}

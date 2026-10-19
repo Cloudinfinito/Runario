@@ -1,0 +1,83 @@
+/* Runario: precios, huecos vacíos más visibles y eventos. Se carga después de skin.css. */
+
+/* ---------- Huecos vacíos: el arte se intuye mejor ---------- */
+.pocket.missing .card img { filter: grayscale(.75) contrast(.92) brightness(1.08); opacity: .5; mix-blend-mode: normal; }
+.binder[data-paper="noche"] .pocket.missing .card img, .binder[data-paper="pizarra"] .pocket.missing .card img { mix-blend-mode: normal; opacity: .46; filter: grayscale(.7) brightness(1.15); }
+.pocket.missing .card::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 30%, transparent), color-mix(in srgb, var(--paper) 55%, transparent) 70%); }
+.binder[data-paper="noche"] .pocket.missing .card::before, .binder[data-paper="pizarra"] .pocket.missing .card::before { background: linear-gradient(180deg, rgb(10 12 18 / .15), rgb(10 12 18 / .5) 72%); }
+.pocket.missing .num, .pocket.missing .nm, .pocket.missing .doms, .pocket.missing .rar, .pocket.missing .marks { z-index: 3; }
+.pocket.missing .nm { opacity: 1; text-shadow: 0 1px 0 color-mix(in srgb, var(--paper) 80%, transparent); }
+.pocket.missing:hover .card img { opacity: .72; filter: grayscale(.35); }
+
+/* ---------- Precios ---------- */
+.ptag { position: absolute; left: 6%; bottom: 4.5%; z-index: 5; padding: 1px 7px 1px 12px; font-family: var(--display); font-weight: 800; font-size: .72rem; letter-spacing: .02em; color: #1d1a10; background: #f6efd8;
+  clip-path: polygon(7px 0, 100% 0, 100% 100%, 7px 100%, 0 50%); box-shadow: 0 1px 2px rgb(0 0 0 / .3); }
+.pocket.missing .ptag { background: color-mix(in srgb, #f6efd8 85%, transparent); }
+.pocket.owned .ptag { background: var(--sec); color: var(--sec-ink); }
+.price-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 10px; padding: 14px; border-radius: 4px; border: 2px dashed var(--edge2); background: var(--bg2); }
+.price-box div { display: flex; flex-direction: column; }
+.price-box span { font-family: var(--display); font-weight: 800; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink3); }
+.price-box b { font-family: var(--display); font-weight: 900; font-size: 1.5rem; }
+.price-box p { grid-column: 1 / -1; margin: 0; }
+.album-value { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.album-value div { display: flex; flex-direction: column; align-items: center; padding: 10px; border-radius: 4px; background: var(--bg2); border: 1px dashed var(--edge2); text-align: center; }
+.album-value span { font-family: var(--hand); font-size: .95rem; color: var(--ink2); }
+.album-value b { font-family: var(--display); font-weight: 900; font-size: 1.35rem; }
+.stat.wide b { width: auto; min-width: 72px; padding: 0 16px; border-radius: 40px; font-size: 1.45rem; }
+.pprice { align-self: flex-start; padding: 2px 10px 2px 14px; font-family: var(--display); font-weight: 900; font-size: 1.05rem; background: #f6efd8; color: #1d1a10; clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%); }
+
+/* ---------- Eventos ---------- */
+.cal { flex: none; width: 82px; display: flex; flex-direction: column; align-items: center; background: var(--paper); color: var(--paper-ink); border-radius: 4px; overflow: hidden; box-shadow: 3px 4px 0 rgb(0 0 0 / .35); transform: rotate(-2deg); }
+.cal-m { width: 100%; text-align: center; background: var(--sec); color: var(--sec-ink); font-family: var(--display); font-weight: 900; letter-spacing: .1em; padding: 3px 0; }
+.cal b { font-family: var(--display); font-weight: 900; font-size: 2.6rem; line-height: 1; margin-top: 4px; }
+.cal-h { font-family: var(--hand); font-size: .95rem; padding-bottom: 6px; border-top: 1px dashed rgb(0 0 0 / .2); width: 100%; text-align: center; }
+.ev-list { display: flex; flex-direction: column; gap: 14px; }
+.ev-card { position: relative; display: flex; gap: 22px; align-items: center; padding: 16px 20px; border-radius: 6px; background: var(--card); border: 2px solid var(--edge); text-decoration: none; transition: transform .15s, border-color .15s; }
+.ev-card:hover { transform: translateX(4px); border-color: var(--sec); }
+.ev-card.going { border-left: 6px solid var(--calm); }
+.ev-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ev-info h3 { font-size: 1.7rem; }
+.ev-where { font-family: var(--hand); font-size: 1.05rem; color: var(--ink2); }
+.ev-flags { align-self: flex-start; }
+.stamp { display: inline-block; padding: 4px 12px; border: 3px solid var(--sec); color: var(--sec); font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; transform: rotate(6deg); border-radius: 4px; opacity: .9; }
+.stamp.ok { border-color: var(--calm); color: var(--calm); }
+.ev-hero { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; padding: 26px 30px; border-radius: 8px; border: 2px solid var(--edge); background: var(--card); }
+.ev-hero h1 { display: block; margin: 10px 0 6px; font-size: clamp(2.4rem, 3.6vw, 3.8rem); }
+.ev-hero .cal { width: 110px; } .ev-hero .cal b { font-size: 3.4rem; }
+.ev-actions { display: flex; flex-direction: column; gap: 8px; }
+.ev-actions [aria-pressed="true"] { border-color: var(--sec); color: var(--sec); }
+.panel.org { margin-top: 16px; border: 2px dashed var(--sec); }
+.ev-form { display: flex; flex-direction: column; gap: 16px; max-width: 980px; }
+.ev-players { margin: 10px 0 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.ev-players li { display: flex; align-items: center; gap: 8px; }
+.ev-players li span:first-child { flex: 1; font-weight: 600; }
+.ev-players li.dropped span:first-child { text-decoration: line-through; color: var(--ink3); }
+.round { margin-bottom: 16px; }
+.pairings { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.pairing { display: grid; grid-template-columns: 70px 1fr 30px 1fr 210px; gap: 10px; align-items: center; padding: 8px 12px; border-radius: 4px; background: var(--bg2); border: 1px solid var(--edge); }
+.pairing.has { border-left: 4px solid var(--calm); }
+.pairing .tbl { font-family: var(--display); font-weight: 800; text-transform: uppercase; color: var(--ink3); font-size: .85rem; }
+.pairing .pl { font-weight: 700; }
+.pairing .pl.win { color: var(--calm); }
+.pairing .pl.win::after { content: ' ✓'; }
+.pairing .vs { font-family: var(--hand); color: var(--ink3); text-align: center; }
+.pairing .res { font-size: .85rem; color: var(--ink3); }
+@media (max-width: 760px) {
+  .ev-card { flex-direction: row; align-items: flex-start; gap: 14px; padding: 14px; } .cal { width: 64px; } .cal b { font-size: 2rem; }
+  .ev-info h3 { font-size: 1.3rem; } .ev-flags { display: none; }
+  .pairing { grid-template-columns: 1fr 1fr; } .pairing .tbl, .pairing .vs { display: none; } .pairing select, .pairing .res { grid-column: 1 / -1; }
+  .ptag { font-size: .62rem; }
+}
+
+/* Precio arriba a la derecha para no tapar el nombre */
+.ptag { left: auto; bottom: auto; right: 6%; top: 4.5%; padding: 1px 12px 1px 7px; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 50%, calc(100% - 7px) 100%, 0 100%); transition: opacity .15s; }
+.pocket:hover .ptag, .pocket:focus-within .ptag { opacity: 0; }
+@media (hover: none) { .pocket.missing .ptag { top: auto; bottom: 4.5%; right: auto; left: 6%; } .pocket.missing .nm { bottom: 16%; } }
+/* Recién llegadas: cartas sueltas sobre la mesa, ligeramente giradas */
+.recent-rail { display: flex; gap: 18px; overflow-x: auto; padding: 14px 6px 26px; margin-bottom: 30px; perspective: 900px; scrollbar-width: thin; }
+.recent-card { position: relative; flex: none; width: 150px; aspect-ratio: var(--card-ratio); padding: 0; border: 0; background: var(--bg2); border-radius: 6px; cursor: pointer; transform-style: preserve-3d;
+  box-shadow: 0 10px 22px rgb(0 0 0 / .45); transition: transform .2s; }
+.recent-card:nth-child(odd) { transform: rotate(-2.5deg); } .recent-card:nth-child(even) { transform: rotate(2deg) translateY(6px); }
+.recent-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.recent-card.tilting { transform: rotateX(var(--rx)) rotateY(var(--ry)) translateY(-8px) scale(1.05); z-index: 2; }
+.recent-card .ptag { position: absolute; top: 6px; right: 6px; }

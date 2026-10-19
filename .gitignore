@@ -1,0 +1,14 @@
+# Datos de usuarios del servidor (cuentas, sesiones, colecciones, equipos, eventos): nunca al repositorio
+storage/
+
+# Credenciales de las cuentas de prueba locales
+tests/fixtures/
+
+# Configuración local del editor
+.claude/
+
+# Varios
+node_modules/
+*.tmp
+.DS_Store
+Thumbs.db

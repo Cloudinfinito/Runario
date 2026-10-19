@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Runario · Archivo de coleccionistas de Riftbound</title>
+  <meta name="description" content="Runario: álbumes de Riftbound con huecos exactos, páginas que se pasan, cartas en 3D, vitrina de medallas y cuenta personal.">
+  <meta name="theme-color" content="#0d1722">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Kalam:wght@400;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/v3.css">
+  <link rel="stylesheet" href="css/social.css">
+  <link rel="stylesheet" href="css/skin.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 1.5L37 20 20 38.5 3 20z' fill='%23d9b46a'/%3E%3Cpath d='M20 5L33.6 20 20 35 6.4 20z' fill='%2316120c'/%3E%3Cpath d='M16 12v16M16 12h5a4.5 4.5 0 010 9h-5M20 21l5.5 7' fill='none' stroke='%23d9b46a' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#view">Saltar al contenido</a>
+  <div class="app" id="app" hidden>
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <nav class="tabbar" id="tabbar" aria-label="Principal (móvil)" hidden></nav>
+  <div id="authRoot" hidden></div>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Ficha de carta" aria-hidden="true"></aside>
+  <dialog id="modal" aria-labelledby="modalTitle"></dialog>
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="data/catalog.js"></script>
+  <script src="data/assets.js"></script>
+  <script src="data/prices.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/selftest.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/flip.js"></script>
+  <script src="js/viewer3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
